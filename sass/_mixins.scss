@@ -1,0 +1,31 @@
+
+
+@mixin setHeight($height, $paddingTop) {
+    height: $height;
+  padding-top: $paddingTop;
+}
+
+@mixin makeCarouselDivs($width, $left, $right){
+
+  display: inline-block;
+  width: $width;
+  padding-left: $left;
+  padding-right:$right;
+}
+
+@mixin forModalTransition ($duration){
+
+  @include transition-duration($duration);
+  @include transition-property(width);
+  @include transition-property(height);
+
+}
+
+@mixin setHeightWidth($height, $width){
+  height: $height;
+  width: $width;
+}
+
+@mixin noDecorationForAnchor($value){
+  text-decoration: $value;
+}

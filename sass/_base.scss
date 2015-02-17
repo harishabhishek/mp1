@@ -4,10 +4,339 @@
 
 h1 {
   font-size: 2.2rem;
-  color: lighten($orange, 25);
+  color: lighten($black, 25);
 }
 
 .test {
   font-size: 1.2rem;
   color: $blue;
+}
+
+#header {
+  height: $headerHeight;
+}
+
+.container {
+  height: $containerHeight;
+}
+
+#header{
+
+  @include setHeightWidth(60px, 100%);
+  text-align: center;
+  //width: 100%;
+  font-family: Copperplate,Copperplate Gothic Light,fantasy;
+  //font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+  padding-top: 15px;
+  font-size: 40px;
+  color: #2176C7;
+  text-shadow:1px 1px #2e2e2e;
+  //height: 60px;
+
+}
+
+nav {
+  display: block;
+  width: $hundredPerc;
+  color: #bbb;
+  background: #2e2e2e;
+  font-weight: bold;
+  z-index: 10;
+  font-family: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+}
+
+nav ul {
+  text-align: center;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 0 3em 0 3em;
+  line-height: 3em;
+  font-size: larger;
+}
+
+nav ul li {
+  a {
+    color: #bbb;
+    background: #2e2e2e;
+    font-weight: bold;
+  }
+
+  a:link {
+    @include noDecorationForAnchor(none);
+  }
+
+  a:visited {
+    @include noDecorationForAnchor(none);
+  }
+
+  a:hover {
+    @include noDecorationForAnchor(none);
+  }
+
+  a:active {
+    @include noDecorationForAnchor(none);
+  }
+}
+
+nav ul li:hover {
+  background: $highlightedNav;
+}
+
+.fixed {
+  position: fixed;
+  top: 0px;
+}
+
+#ulNav{
+  @include forModalTransition(4s);
+}
+
+.shrunkli{
+  display: inline-block;
+  padding: 0 2em 0 2em;
+  line-height: 2em;
+  font-size: medium;
+}
+
+#home{
+  @include setHeight(500px, 40px);
+  position: relative;
+}
+
+#homeWrapper{
+  position: absolute;
+  top: 40px;
+  @include setHeightWidth(80%, 100%);
+//  width: 100%;
+//  height: 80%;
+  padding-top: 30px;
+  background-image: url("../modal/backgroundImg.jpg");
+  background-attachment: fixed;
+  z-index: -99;
+  text-align: center;
+  line-height: 20px;
+  font-family: Copperplate,Copperplate Gothic Light,fantasy;
+}
+
+#about{
+  @include setHeight(500px, 90px);
+
+}
+
+
+#modalDiv{
+  @include setHeight(500px, 90px);
+  width: 100%;
+  background-color:#1f203e;
+  text-align: center;
+
+}
+
+#ModalHeader{
+  font-family:Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+  color: #eeeeee;
+  font-size: 24px;
+}
+
+.modalImagesClass{
+  height: 150px;
+  width: 150px;
+  //padding: 10px;
+  border-radius: 10px;
+}
+
+.highlightNav{
+  background: $highlightedNav;
+}
+
+#div1{
+  @include makeCarouselDivs(10%, 9%, 0%);
+
+}
+
+#div2{
+  @include makeCarouselDivs(59%, 0%, 0%)
+}
+
+
+#div3{
+  @include makeCarouselDivs(10%, 0%, 9%);
+}
+
+#leftClick{
+  margin-bottom: 135px;
+}
+
+#rightClick{
+  margin-bottom: 135px;
+}
+
+#carouselDiv{
+
+  @include setHeightWidth(400px, 600px);
+//  height: 400px;
+//  width: 600px;
+}
+
+#carouselImg{
+  @include setHeightWidth(100%, 100%);
+//  height: 100%;
+//  width: 100%;
+  z-index: -9;
+}
+
+#innerDiv{
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wrapperModalHidden{
+  display: none;
+}
+
+
+.modalHolderHidden{
+  display: none;
+}
+
+.modalHolder{
+
+  @include setHeightWidth(80%, 70%);
+//  width: 70%;
+//  height: 80%;
+  background-color: transparent;
+  border-radius: 25px;
+  margin-left: 14%;
+  margin-right: 14%;
+  text-align: center;
+  position: relative;
+  padding: 17px;
+
+}
+
+#modalButton {
+  margin-left: 45%;
+  width: 10%;
+}
+
+#modalHolderid{
+  @include forModalTransition(0.5s);
+}
+
+#modalImage{
+  @include setHeightWidth(100%, 100%);
+//  height: 100%;
+//  width: 100%;
+  border-radius: 25px;
+  display: compact;
+}
+
+#modalButtonHide{
+  position: absolute;
+  @include setHeightWidth(50px, 50px);
+
+//  width: 50px;
+//  height: 50px;
+  top: 0;
+  right: 0;
+}
+
+#videoPanel{
+  padding-top: 50px;
+  background-color: #dddddd;
+  padding-bottom: 50px;
+  padding-left: 2px;
+  padding-right:2px;
+}
+
+#myVideo{
+  position: relative;
+  @include setHeightWidth(100%, 100%);
+
+//  width: 100%;
+//  height: 100%;
+}
+
+#socialWrapper{
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px;
+  font-family:Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+  color: #366097;
+  font-size: 48px;
+  padding-bottom: 300px;
+  a:link {
+    text-decoration: none;
+  }
+
+  a:visited {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  a:active {
+    text-decoration: none;
+  }
+}
+.imageSpan{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#vColumns{
+  height: 300px;
+  padding-top: 70px;
+  width: 100%;
+  font-family: Copperplate,Copperplate Gothic Light,fantasy;
+}
+
+#col1{
+  float: left;
+  width: 33%;
+  text-align: center;
+
+}
+
+#col2{
+  float: left;
+  width: 34%;
+  text-align: center;
+}
+
+
+#col3{
+  float: left;
+  width: 33%;
+  text-align: center;
+
+}
+
+.columnsClass{
+
+}
+
+.innerText{
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-top: 50px;
+
+}
+
+
+#footer{
+  text-align: center;
+  background-color: #0d3349;
+  margin-top: 30px;
+  font-family: Copperplate,Copperplate Gothic Light,fantasy;
+  font-size: 13px;
+  height: 80px;
+  color: #ffffff;
+
 }

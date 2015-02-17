@@ -1,18 +1,155 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>MP1 Starter</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" type="image/ico" href="icons/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine"/>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"/>
+
+    <meta charset="UTF-8">
+    <title>:::Abhishek Harish:::</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 </head>
 <body>
-  <h1>Hello World!</h1>
-  <div class="test"> My name is Anthony.</div>
+<script src="lib/jquery-2.1.3.min/index.js"></script>
+<script src="js/script.js"></script>
+<script src="http://localhost:35729/livereload.js"></script>
+
+<div class="container">
+    <div id="header">
+        <p class="headerName">Abhishek Harish</p>
+    </div>
+
+    <!-- http://codepen.io/nicklolsen/pen/GyFzk -->
+    <div id="navbarDiv">
+        <nav id="navbar">
+            <ul id="ulNav">
+                <li onclick="homeClick()" id="homeNav"> Home</li>
+                <li onclick="aboutClick()" id="aboutNav">About Me</li>
+                <li onclick="projectsClick()" id="projectsNav"> Modal</li>
+                <li onclick="videoClick()" id="videoNav"> Video</li>
+                <li onclick="colClick()" id="columnNav">Thoughts </li>
+                <li onclick="SocialClick()" id="socialNav"> Find Me!</li>
+            </ul>
+
+        </nav>
+    </div>
+
+    <!--home-->
+    <div id="home"> <div id="homeWrapper"> <H1> Want to Know more about me? </H1>
+
+        <br>
+        <br>
+        <h3>Keep Scrolling down!!!</h3>
+        <br> <br>
+        <br>
+        <h2> I am CS Senior at University of Illinois </h2>
+        <br>
+        <h2> I love to play Piano</h2>
+        <br>
+        <h2> I have a blue belt in Jujitsu</h2>
+        <br>
+        <h2> I am from New Delhi, India</h2><br>
+        <h2> And... I like to code just for fun </h2>
+    </div></div>
+
+    <!--about-->
+    <div id="about">
+        <div id="div1"> <img id="leftClick"  onclick="leftClicked()"
+                             onmouseover="leftHighlight()"
+                             onmouseout="leftRemoveHighlight()"
+                             src="icons/left_unclicked.png" > </div>
+        <div id="div2" align="center">
+            <div id="carouselDiv">
+                <img id="carouselImg" src="carousel/carouselImg1.png">
+            </div>
+        </div>
+        <div id="div3"> <img id="rightClick" onclick="rightClicked()"
+                             onmouseover="rightHighlight()"
+                             onmouseout="rightRemoveHighlight()"
+                             src="icons/right_unclicked.png"></div>
+    </div>
+
+    <!--modal-->
+    <div id="modalDiv" >
+
+        <p id="ModalHeader"> Click on the Image to open</p> <br><br>
+        <div id="modalHolderid" class=".modalHolderHidden"></div>
 
 
-  <script src="lib/jquery-2.1.3.min/index.js"></script>
-  <script src="js/script.js"></script>
-  <script src="http://localhost:35729/livereload.js"></script>
+        <div id="wrapperInner">
+        <img class="modalImagesClass" id="1" onclick="ModalClicked(this.id)" src="modal/modal1.jpg">
+        <img class="modalImagesClass" id="2" onclick="ModalClicked(this.id)" src="modal/modal2.jpg">
+        <img class="modalImagesClass" id="3" onclick="ModalClicked(this.id)" src="modal/modal3.jpg">
+        <br>
+        <img class="modalImagesClass" id="4" onclick="ModalClicked(this.id)" src="modal/modal4.jpg">
+        <img class="modalImagesClass" id="5" onclick="ModalClicked(this.id)" src="modal/modal5.jpg">
+        <img class="modalImagesClass" id="6" onclick="ModalClicked(this.id)" src="modal/modal6.jpg">
+
+        </div>
+
+    </div>
+
+    <!--video-->
+    <div id="videoPanel">
+        <video id="myVideo" width="100%" height="320px" autoplay loop muted>
+            <source src="icons/video2.mp4" type="video/mp4">
+        </video>
+
+    </div>
+
+    <div id="vColumns">
+        <ul id="colUl">
+            <li id="col1" class="columnsClass">
+                <h1> Creative</h1> <br>
+                <i class="fa fa-text-height fa-4x"></i> <br>
+
+                <div class="innerText">I am an extremely modivated,
+                    dedicated and hardworking but having fun in what I am doing is the most important thing. </div></li>
+            <li id="col2" class="columnsClass"><h1> About Me</h1> <br>
+                <i class="fa fa-university fa-4x"></i><br>
+                <div class="innerText">I go to university of Illinois, the best school in the whole wide world. I am a senior in CS
+                    and I am going to grad school.</div></li>
+            <li id="col3" class="columnsClass"> <h1> Past Works</h1> <br>
+                <i class="fa fa-linux fa-4x"></i><br>
+                <div class="innerText">I will be interning at Google this summer. I have interned at Qualcomm and State Farm in the past.
+                    I will be doing my Masters Thesis under professor Gul Agha.</div></li>
+        </ul>
+    </div>
+
+    <div id="socialWrapper">
+        <i class="fa fa-android"></i> Find me on <i class="fa fa-android"></i> <br> <br>
+        <div id="social"> <span>
+            <a href="https://www.facebook.com/abhishek.harish" target="_blank"> <img class="imageSpan" src="icons/facebook.png"> </a>
+            <a href="https://plus.google.com/103648798426230248141/posts" target="_blank"><img class="imageSpan" src="icons/google.png"> </a>
+                <a href="https://www.linkedin.com/pub/abhishek-harish/66/854/350" target="_blank"><img class="imageSpan" src="icons/linkedin.png"> </a>
+                    <a href="https://twitter.com/?lang=en" target="_blank"><img class="imageSpan" src="icons/twitter.png"></a>
+        </span></div>
+    </div>
+    <div id="footer">
+        <br>
+        <i class="fa fa-database fa-2x"></i>
+        <i class="fa fa-download fa-2x"></i>
+        <i class="fa fa-folder fa-2x"></i>
+        <i class="fa fa-video-camera fa-2x"></i>
+        <br><br>
+        <i class="fa fa-cloud"></i>
+        <i class="fa fa-cloud"></i>
+        <i class="fa fa-cloud"></i> A website developed by Abhishek Harish for CS 498, Spring 2015 @ UIUC for MP1
+        <i class="fa fa-cloud"></i>
+        <i class="fa fa-cloud"></i>
+        <i class="fa fa-cloud"></i>
+
+
+
+
+    </div>
+
+</div>
+
+
+
+
+</div>
 </body>
 </html>
