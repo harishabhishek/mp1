@@ -5,20 +5,15 @@
 //http://codepen.io/nicklolsen/pen/GyFzk
 
 
-function isScrolledIntoView(elem)
-{
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
-
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
-
-    return ((( elemTop >= docViewTop) && (elemTop <= docViewBottom)) || ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom)));
-}
-
-
 var scrollAmount = 50;
 
+/*
+The function which handles the scroll on the window.
+Depending on which element is on top, we can highlight the respective
+section on the Navbar.
+Also, this function is used to stick the Navbar to the top of the page.
+This is done by resizing the navbar in an animation.
+ */
 $(window).on('scroll', function(){
 
     if($(window).scrollTop() > $('#home').offset().top -50){
@@ -52,14 +47,6 @@ $(window).on('scroll', function(){
         $('#socialNav').addClass('highlightNav');
     }
 
-
-    if (isScrolledIntoView($('#home'))){
-        console.log("True");
-    }
-    else{
-        console.log("False");
-    }
-
     if($(window).scrollTop()>=scrollAmount && !$('nav').hasClass('fixed')){
         $('nav').addClass('fixed').animate({ top: 0 }, "slow");
         $('#homeNav').addClass('shrunkli');
@@ -76,7 +63,10 @@ $(window).on('scroll', function(){
 });
 
 
-
+/*
+The function to handle the click on Navigation Bar's home button.
+It scrolls the page down to the respective div.
+ */
 function homeClick(){
 
     var div = $("#home");
@@ -89,6 +79,10 @@ function homeClick(){
     $('#homeNav').addClass('highlightNav');
 }
 
+/*
+ The function to handle the click on Navigation Bar's home button.
+ It scrolls the page down to the respective div.
+ */
 function aboutClick(){
 
     var div = $("#about");
@@ -101,6 +95,10 @@ function aboutClick(){
     $('#aboutNav').addClass('highlightNav');
 }
 
+/*
+ The function to handle the click on Navigation Bar's Modal button.
+ It scrolls the page down to the respective div.
+ */
 function projectsClick(){
 
     var div = $("#modalDiv");
@@ -113,6 +111,10 @@ function projectsClick(){
     $('#projectsNav').addClass('highlightNav');
 }
 
+/*
+ The function to handle the click on Navigation Bar's Video button.
+ It scrolls the page down to the respective div.
+ */
 function videoClick(){
 
     var div = $("#videoPanel");
@@ -125,6 +127,10 @@ function videoClick(){
     $('#videoNav').addClass('highlightNav');
 }
 
+/*
+ The function to handle the click on Navigation Bar's Find Me! button.
+ It scrolls the page down to the respective div.
+ */
 function SocialClick(){
 
     var div = $("#socialWrapper");
@@ -137,6 +143,10 @@ function SocialClick(){
     $('#socialNav').addClass('highlightNav');
 }
 
+/*
+ The function to handle the click on Navigation Bar's Thoughts button.
+ It scrolls the page down to the respective div.
+ */
 function colClick(){
 
     var div = $("#vColumns");
@@ -149,6 +159,9 @@ function colClick(){
     $('#columnNav').addClass('highlightNav');
 }
 
+/*
+Function to switch between the left image highlight/non-highlight for carousel
+ */
 function leftHighlight(){
 
     $('#leftClick').fadeIn('slow', function(){
@@ -156,6 +169,9 @@ function leftHighlight(){
     });
 }
 
+/*
+ Function to switch between the left image highlight/non-highlight for carousel
+ */
 function leftRemoveHighlight(){
 
     $('#leftClick').fadeIn('slow', function(){
@@ -163,6 +179,9 @@ function leftRemoveHighlight(){
     });
 }
 
+/*
+ Function to switch between the left image for carousel
+ */
 function leftClicked(){
     var imgElem = document.getElementById('carouselImg');
     var name = imgElem.src;
@@ -180,6 +199,9 @@ function leftClicked(){
     });
 }
 
+/*
+ Function to switch between the left image for carousel
+ */
 function rightClicked(){
     var imgElem = document.getElementById('carouselImg');
     var name = imgElem.src;
@@ -197,17 +219,18 @@ function rightClicked(){
     });
 }
 
-function haha(){
-    alert("Haha");
-}
-
+/*
+ Function to switch between the right image highlight/non-highlight for carousel
+ */
 function rightHighlight(){
 
     $('#rightClick').fadeIn('slow', function(){
         $('#rightClick').attr("src", "icons/right_clicked.png");
     });
 }
-
+/*
+ Function to switch between the right image highlight/non-highlight for carousel
+ */
 function rightRemoveHighlight(){
 
     $('#rightClick').fadeIn('slow', function(){
@@ -215,7 +238,11 @@ function rightRemoveHighlight(){
     });
 }
 
-
+/*
+Function to handle when a given image in the modal is clicked.
+It creates the new HTML content to go inside the hidden div and unhides it.
+It extracts the id which was passed as a parameter and then find the respective image
+ */
 function ModalClicked(clicked_id){
 
     $('#wrapperInner').addClass('wrapperModalHidden');
@@ -229,6 +256,9 @@ function ModalClicked(clicked_id){
     $('#ModalHeader').html('');
 }
 
+/*
+The function to handle the close button on the modal
+ */
 function ModalClickedHide(){
 
     $('#wrapperInner').removeClass('wrapperModalHidden');
