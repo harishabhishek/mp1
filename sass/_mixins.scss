@@ -21,6 +21,24 @@
 
 }
 
+@mixin anchorProperties(){
+  a:link {
+    @include noDecorationForAnchor(none);
+  }
+
+  a:visited {
+    @include noDecorationForAnchor(none);
+  }
+
+  a:hover {
+    @include noDecorationForAnchor(none);
+  }
+
+  a:active {
+    @include noDecorationForAnchor(none);
+  }
+}
+
 @mixin setHeightWidth($height, $width){
   height: $height;
   width: $width;
@@ -40,4 +58,20 @@
 @mixin setFontFaceSize($face, $size){
   font-family: $face;
   font-size: $size;
+}
+
+@mixin centeredBlueTest{
+  @include setFontFaceSize($rockwell, 48px);
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px;
+  color: $facebookBlue;
+  padding-bottom: 300px;
+
+  @include anchorProperties();
+
+}
+
+@mixin alignTextCenter{
+  text-align: center;
 }

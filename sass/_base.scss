@@ -19,7 +19,7 @@ h1 {
 
   @include setFontFaceSize($copperPlate, 40px);
   @include setHeightWidth(60px, 100%);
-  text-align: center;
+  @include alignTextCenter();
   padding-top: 15px;
   color: $blue;
   text-shadow:1px 1px $darkGrey;
@@ -41,7 +41,7 @@ nav {
 
 nav ul {
   @include forModalTransition(4s);
-  text-align: center;
+  @include alignTextCenter();
   margin: 0;
 }
 
@@ -61,21 +61,7 @@ nav ul li {
     font-weight: bold;
   }
 
-  a:link {
-    @include noDecorationForAnchor(none);
-  }
-
-  a:visited {
-    @include noDecorationForAnchor(none);
-  }
-
-  a:hover {
-    @include noDecorationForAnchor(none);
-  }
-
-  a:active {
-    @include noDecorationForAnchor(none);
-  }
+  @include anchorProperties();
 }
 
 nav ul li:hover {
@@ -107,14 +93,15 @@ nav ul li:hover {
 #homeWrapper{
   @include setFontFaceSize($copperPlate, inherit);
   @include setHeightWidth(80%, 100%);
+  @include alignTextCenter();
   position: absolute;
   top: 40px;
   padding-top: 30px;
   background-image: url("../modal/backgroundImg.jpg");
   background-attachment: fixed;
   z-index: -99;
-  text-align: center;
   line-height: 20px;
+
 }
 
 #about{
@@ -126,14 +113,14 @@ nav ul li:hover {
 #modalDiv{
   @include setHeight(500px, 90px);
   @include setHeightWidth(500px, 100%);
+  @include alignTextCenter();
   background-color:$prussianBlue;
-  text-align: center;
 
 }
 
 #ModalHeader{
   color: $modalHeaderColor;
-  @include setFontFaceSize($rockwell, 24px);
+  @include setFontFaceSize($copperPlate, 24px);
 }
 
 .modalImagesClass{
@@ -243,29 +230,8 @@ nav ul li:hover {
 
 #socialWrapper{
 
-  @include setFontFaceSize($rockwell, 48px);
-  text-align: center;
-  vertical-align: middle;
-  line-height: 90px;
-  color: $facebookBlue;
-  padding-bottom: 300px;
-
-
-  a:link {
-    @include noDecorationForAnchor(none);
-  }
-
-  a:visited {
-    @include noDecorationForAnchor(none);
-  }
-
-  a:hover {
-    @include noDecorationForAnchor(none);
-  }
-
-  a:active {
-    @include noDecorationForAnchor(none);
-  }
+  @include centeredBlueTest();
+  height: 300px;
 }
 
 .imageSpan{
@@ -318,12 +284,17 @@ nav ul li:hover {
 
 #videoDiv{
   @include setFontFaceSize($copperPlate, 30px);
+  @include alignTextCenter();
   text-shadow:3px 3px #0d3349;
   position: absolute;
   z-index: 5;
-  text-align: center;
   top: 30%;
   left: 30%;
   width: 40%;
+  height: 40%;
   color: #ffffff;
+}
+
+#resume{
+  @include centeredBlueTest();
 }
