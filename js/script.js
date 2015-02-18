@@ -1,22 +1,10 @@
-var divs = document.getElementsByTagName('div');
-for(var i=0; i<divs.length; i++) {
-  divs[i].addEventListener("click", highlightThis);
-  /*
-  divs[i].addEventListener("click", highlightThis, true);
-  divs[i].addEventListener("click", highlightThis, false);*/
-}
 
-function highlightThis(event) {
-    //event.stopPropagation();
-  
-    var backgroundColor = this.style.backgroundColor;
-    this.style.backgroundColor='yellow';
-    alert(this.className);
-    this.style.backgroundColor=backgroundColor;
-}
-
-
+//http:/web.enavu.com/tutorials/making-an-infinite-jquery-carousel/
+//http://jsfiddle.net/joshnh/YxRqp/
 //http://stackoverflow.com/questions/487073/check-if-element-is-visible-after-scrolling
+//http://codepen.io/nicklolsen/pen/GyFzk
+
+
 function isScrolledIntoView(elem)
 {
     var docViewTop = $(window).scrollTop();
@@ -73,15 +61,13 @@ $(window).on('scroll', function(){
     }
 
     if($(window).scrollTop()>=scrollAmount && !$('nav').hasClass('fixed')){
-        $('nav').addClass('fixed').animate({ top: 0 });
+        $('nav').addClass('fixed').animate({ top: 0 }, "slow");
         $('#homeNav').addClass('shrunkli');
         $('#aboutNav').addClass('shrunkli');
         $('#projectsNav').addClass('shrunkli');
         $('#videoNav').addClass('shrunkli');
         $('#socialNav').addClass('shrunkli');
         $('#columnNav').addClass('shrunkli');
-
-
     }
     else if($(window).scrollTop()<scrollAmount && $('nav').hasClass('fixed')){
         $('nav').removeClass('fixed');
@@ -89,10 +75,7 @@ $(window).on('scroll', function(){
     }
 });
 
-//http:/web.enavu.com/tutorials/making-an-infinite-jquery-carousel/
 
-
-//http://jsfiddle.net/joshnh/YxRqp/
 
 function homeClick(){
 

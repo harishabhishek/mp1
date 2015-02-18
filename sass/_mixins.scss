@@ -29,3 +29,15 @@
 @mixin noDecorationForAnchor($value){
   text-decoration: $value;
 }
+
+@mixin columnAlign($width){
+
+  float: left;
+  width: $width;
+  text-align: center;
+}
+
+@mixin setFontFaceSize($face, $size){
+  font-family: $face;
+  font-size: $size;
+}
